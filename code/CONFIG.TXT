@@ -1,0 +1,23 @@
+// __ PongSat Config File __
+// any string after one forward slash is considerate as comment
+
+// mP <measurePeriod> [sec]
+// approximate time between measurements in seconds
+mP = 5 
+
+// iPM <isPressureMeasured> [1 or 0]
+//  1-save measurements, 0 - don't save it
+iPM = 1
+
+// iTM <isTemperatureMeasured> [1 or 0]
+// 1-save measurements, 0 - don't save it
+iTM = 1
+
+// SDWP < SDwritingPeriod> 
+// how many measurements between writing to SD card (0-100 )
+SDWP = 5
+
+// dC <datalogComment>
+// Comment included in next datalog.txt file
+// Keep it short, long strings may overload arduino's memory
+dC = "14-01-18, 17:06, Krakow"
