@@ -66,6 +66,15 @@ The time between each measurement (mP) also can be set (up to maximum ATMega int
 
 ###Data interpretation
 
+Data saved in DATALOG.TXT need to be processed. The [MPL115A1][sensor] sensor returns two integer values representing pressure and temperature measurements. You should use following formula in order to convert this values. See [MMPL115A1 documentation](https://www.sparkfun.com/datasheets/Sensors/Pressure/MPL115A1.pdf)
+
+#####Pressure
+Sensor range is is 50 to 115kPa and its output value varies from 0 to 1023. So to calculate pressure in kPa use following equation:
+* pressure_kPa = (65.0/1024.0)*pressure_int + 50
+
+#####Temperature
+Temperature resolution is -5.35 counts/Celcius and 472 ADC value is 25 Celcius, so:
+* temperature_celcius = 25 + (temperature_int - 472) / -5.35
 
 
 ###Used open-source code:
